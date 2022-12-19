@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load composer's autoloader
-require_once $_SERVER['DOCUMENT_ROOT'].$path_to_autoloader;
+require_once $path_to_autoloader;
 
 $mail = new PHPMailer(true);    // Passing `true` enables exceptions
 try {
