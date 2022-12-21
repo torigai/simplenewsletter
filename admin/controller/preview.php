@@ -15,7 +15,7 @@
 
   if (isset($_GET['l'])) {
     try {
-      $newsletterDao = \model\database\NewsletterDao::getInstance();
+      $newsletterDao = \model\NewsletterDao::getInstance();
       $mailinglistArr = $newsletterDao->getMailinglist();
       $mailinglist = array();
       foreach ($mailinglistArr as $value) {

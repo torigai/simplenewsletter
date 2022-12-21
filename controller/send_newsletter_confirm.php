@@ -13,7 +13,7 @@ require_once $path_to_autoloader;
 $mail = new PHPMailer(true);    // Passing `true` enables exceptions
 try {
 
-    $url = $url_of_newsletter."/confirm.php";
+    $url = $path_to_confirm;
 
     if (isset($statusvar)) { //Unsubscribe
         $msg = sprintf(

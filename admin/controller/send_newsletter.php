@@ -13,14 +13,14 @@ $mail = new PHPMailer(true);    // Passing `true` enables exceptions
 try {
     
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = $mailhost;                     // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = $mailusername;                 // SMTP username
-    $mail->Password = $mailpwd;                           // SMTP password
-    $mail->SMTPSecure = $smtpsecuretype                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = $smtpport;                                    // TCP port to connect to
+    $mail->SMTPDebug = 2;                 // Enable verbose debug output
+    $mail->isSMTP();                      // Set mailer to use SMTP
+    $mail->Host = $mailhost;              // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;               // Enable SMTP authentication
+    $mail->Username = $mailusername;      // SMTP username
+    $mail->Password = $mailpwd;           // SMTP password
+    $mail->SMTPSecure = $smtpsecuretype;  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = $smtpport;              // TCP port to connect to
     $mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,

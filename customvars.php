@@ -3,11 +3,11 @@
 	//needed in views/confirm.php
 	$url_of_website = 'www.mycompany.de';
 
-	//needed in controller/send_newsletter
+	//needed in controller/send_newsletter_confirm.php and admin/controller/send_newsletter.php
 	$path_to_autoloader = $_SERVER['DOCUMENT_ROOT'].'/ADD_MISSING_DIRS_TO/newsletter/vendor/autoload.php';
 
-	//needed in controller/send_newsletter_confirm
-	$url_of_newsletter = $url_of_website.'ADD_MISSING_DIRS_TO/newsletter';
+	//needed in controller/send_newsletter_confirm.php
+	$path_to_confirm = $url_of_website . '/ADD_MISSING_DIRS_TO/newsletter/views/confirm.php';
 
 	//Subjects of emails
 

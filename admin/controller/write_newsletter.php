@@ -28,6 +28,4 @@ if (!empty($_POST["nl-content"])) {
 	header("Location: ../../views/error.php?err=400");
 	die();
 }
-
-
 ?>

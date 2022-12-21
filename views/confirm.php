@@ -1,5 +1,5 @@
 <?php
- //require_once "../controller/confirm.php";
+ require_once "../controller/confirm.php";
  require_once "../customvars.php";
 ?>
 
@@ -16,8 +16,8 @@
 </head>
 
 <body>
-    <div id="logo">
-        <img src="../logo.png">
+    <div>
+        <img id="logo" src="../logo.png">
     </div>
     <div class="login-page">
         <p><?php echo $info ?></p>
