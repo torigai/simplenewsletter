@@ -9,8 +9,8 @@
 
 </head>
 <body>
-    <div id="logo">
-        <img src="../logo.png">
+    <div>
+        <img id="logo" src="../logo.png">
     </div>
     <div class="login-page">
         ERROR <?php echo $_GET['err']?>
