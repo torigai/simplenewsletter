@@ -9,7 +9,8 @@
   if (isset($_GET['m'])) {
     $msg = $_GET['m'];
     $logo = $mylogo;
-        $info = urlencode($logo . $msg);
+    $mailfooter = $myfooter;
+        $info = urlencode($logo . $msg . $mailfooter);
         header("Location: ../views/preview.php?info=".$info);
     die();
   }

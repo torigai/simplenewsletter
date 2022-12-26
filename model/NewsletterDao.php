@@ -17,6 +17,7 @@
     const GET_NL_INFO_MAIL = "SELECT * FROM newsletter WHERE email = ?";
     const GET_NL_INFO_ID = "SELECT * FROM newsletter WHERE id = ?";
     const ADD_NEW_NL = "INSERT INTO newsletter (email, verified, created_at) VALUES (?, ?,?)";
+    const ADD_CONFIRMED_MAIL = "INSERT INTO newsletter (email, created_at) VALUES (?,?)";
     const DELETE_NL = "DELETE FROM newsletter WHERE id = ?";
     const ACTIVATE_NL = "UPDATE newsletter SET verified = NULL WHERE id = ?";
     const NEW_VERIF_CODE = "UPDATE newsletter SET verified = ? WHERE id = ?";
@@ -72,6 +73,23 @@
         try {
             $statement = $this->pdo->prepare(self::ADD_NEW_NL);
             $statement->execute(array($email, $verified, $created_at));
+            $lastInsertId = $this->pdo->lastInsertId();
+            $this->pdo->commit();
+            return $lastInsertId; 
+        } catch (\PDOException $e) {
+            $this->pdo->rollBack();
+            $message = date("Y-m-d H:i:s") . " " . $_SERVER['SCRIPT_NAME'] . " $e\n"; error_log($message,0);
+                header("Location: ../views/error.php?err=500");
+                die();
+        }
+    }
+
+    function addConfirmedNL ($email, $created_at)
+    {
+        $this->pdo->beginTransaction();
+        try {
+            $statement = $this->pdo->prepare(self::ADD_CONFIRMED_MAIL);
+            $statement->execute(array($email, $created_at));
             $lastInsertId = $this->pdo->lastInsertId();
             $this->pdo->commit();
             return $lastInsertId; 

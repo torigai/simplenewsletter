@@ -25,7 +25,8 @@ You have to install composer to get autoloader and phpmailer. For this open the 
 	curl -sS https://getcomposer.org/installer | php
 	php composer.phar update
 
-In order to install the mysqldatabase, please follow the instructions in createDatabase.sql
+In order to install the mysqldatabase, please follow the instructions in createDatabase.sql. But before doing that you should decide on how you want to
+secure your administrational part (cf. the section on security below).
 
 In order to have the program use the correct paths and infos for emailing etc., configure customvars.php according to your needs.
 
@@ -33,10 +34,16 @@ Change logo.png with your own logo.png.
 
 You can run this program by simply creating a link to /newsletter/index.php on your webpage. For administration (writing newsletters and exporting email addresses), you should link your private part of the webpage with /newsletter/admin/index.php
 
+Make sure that the file rights of /simplenewsletter/import_emails.php are 600 (rw----)!
+
 
 === Security ===
 
 It is reasonable to secure data transfer with a CAA or self-signed certificate
+
+Make sure that the file rights of /simplenewsletter/import_emails.php are 600 (rw----)!
+
+For securing the administrational part I propose two methods:
 
 METHOD 1:
 
@@ -79,4 +86,6 @@ If you prefer the login method integrated in this program, leave everything as i
 in createDatabase.sql.
 
 
+=== Import mailinglist ===
 
+The script simplenewsletter/import_emails.php allows you to import emails into the database without confirmation. It's important that the file rights should be set to 600 after you finished with that script.

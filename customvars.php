@@ -29,4 +29,5 @@
 	//contoller/send_newsletter.php
 
 	$mylogo = "<div style='margin: 1.5em 0'><h1 style='font-size: 2.7em; font-weight: 400; color: #EF7D25; font-family: \"Roboto Slab\", serif;'>My<span style='color: #333'>Company - Newsletter</span></h1></div>";
+	$myfooter = "";
 ?>

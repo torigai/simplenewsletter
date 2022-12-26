@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `newsletter` (
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TRIGGER delete_superfluous_rows
-AFTER DELETE ON newsletter FOR EACH ROW
+AFTER UPDATE ON newsletter FOR EACH ROW
   DELETE FROM newsletter 
   WHERE verified IS NOT NULL
   AND DATEDIFF(NOW(), created_at) > 14;
