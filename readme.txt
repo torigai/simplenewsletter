@@ -31,12 +31,14 @@ In order to have the program use the correct paths and infos for emailing etc., 
 
 Change logo.png with your own logo.png.
 
-You can run this program by simply creating a link to index.php on your webpage. For administration (writing newsletters and exporting email addresses), you should link your private part of the webpage with /newsletter/admin/write_newsletter.php
+You can run this program by simply creating a link to /newsletter/index.php on your webpage. For administration (writing newsletters and exporting email addresses), you should link your private part of the webpage with /newsletter/admin/index.php
 
 
 === Security ===
 
 It is reasonable to secure data transfer with a CAA or self-signed certificate
+
+METHOD 1:
 
 The directory /newsletter/admin should be secured with a password, for instance via an appropriate htaccess file or directly in the apache configs. For instance add 
 
@@ -53,4 +55,28 @@ The directory /newsletter/admin should be secured with a password, for instance 
 </Directory>
 
 to your website config-settings and use authentification with a DBM file. For more informations confer the Apache documentation: https://httpd.apache.org/docs/
+
+In order to secure the admin-part in that way, change the header in /admin/index.php such that it points to /admin/views/write_newsletter.php
+
+Further you have to comment out
+
+    require_once '../controller/session_check.php';
+
+in /admin/views/preview.php and /admin/views/write_newsletter.php
+
+as well as
+    
+    require_once 'session_check.php';
+
+in /admin/controller/preview.php, /admin/controller/send_newsletter.php and /admin/controller/write_newsletter.php
+
+For method 1 it is not necessary to create a table 'users' as described in createDatabase.sql!
+
+
+METHOD 2
+
+If you prefer the login method integrated in this program, leave everything as is. When you create the tables, you also have to create a table 'users' and insert the name of your admin and the sha1-hash of the password for your admin as is described
+in createDatabase.sql.
+
+
 

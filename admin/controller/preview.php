@@ -1,6 +1,7 @@
 <?php
 
   require_once "../../customvars.php";
+  require_once 'session_check.php';
 
   //Load composer's autoloader
   require_once ('../../vendor/autoload.php');

@@ -28,7 +28,7 @@
             <p class="wrongInput" <?= (!isset($_GET['errorSendEmail'])) ?:"style='display: block;'"?>>
                 <span>Die email konnte nicht gesendet werden!</span>
             </p>
-            <input id="register" type="submit" value="REGISTRIEREN">
+            <input id="register" type="submit" value="ANMELDEN">
             <input id="unsubscribe" type="submit" value="ABBESTELLEN">            
         </form>
     </div>

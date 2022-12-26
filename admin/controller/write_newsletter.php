@@ -1,10 +1,11 @@
 <?php
 //Load composer's autoloader
 require_once ('../../vendor/autoload.php');
+require_once 'session_check.php';
 
 if (!empty($_POST["nl-content"])) {
 	$msg = $_POST['nl-content'];
-	$subject = (empty($_POST["subject"])) ? "Newsletter" : "Newsletter: " . $_POST["subject"];
+	$subject = (empty($_POST["subject"])) ? "Newsletter" : $_POST["subject"];
 	try {
 		$newsletterDao = \model\NewsletterDao::getInstance();
 		$mailinglistArr = $newsletterDao->getMailinglist();
