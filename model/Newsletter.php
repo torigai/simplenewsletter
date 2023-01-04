@@ -8,7 +8,7 @@ class Newsletter
  private $email;
  private $created_at;
  private $verified; // verified = NULL, not verified = NOT NULL
-    private $delrequest;  // no delrequest = NULL, delrequest = NOT NULL
+ private $delrequest;  // no delrequest = NULL, delrequest = NOT NULL
 
  /**
      * Newsletter constructor

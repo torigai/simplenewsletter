@@ -8,9 +8,22 @@
 require_once './vendor/autoload.php';
 require_once './admin/controller/session_check.php';
 
-//Insert mailinglist - commasepareted - into mails array:
-$mails = array('newmail_1', 'newmail_2', '...');
+//insert your commaseparated emails into $str:
+$str = htmlspecialchars("email_1, email_2,...");
+
+$inputArr = explode(",", $str);
+
+function puremailaddress ($mail)
+{
+	$mail = trim($mail);
+	$pattern = "/\S+@\S+.[a-z]+/";
+	preg_match($pattern, $mail, $match);
+	$result = str_replace("&gt", "", str_replace("&lt;", "", $match[0]));
+	return $result;
+}
+$mails = array_map('puremailaddress', $inputArr);
 $mailinglist = array_unique($mails);
+//print_r($mailinglist);
 
 $newsletter = new \model\Newsletter();
 
@@ -36,5 +49,4 @@ try {
        	error_log($message,0);
        	die();
     }
-
 ?>

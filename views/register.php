@@ -11,25 +11,33 @@
 
 <body>
     <div>
-        <img id="logo" src="../logo.png">
+        <img id="logo" class="logo" src="../logo.png">
     </div>
     <div class="login-page">
         <div id="title">
             <h1>Newsletter</h1>
         </div>
         <form class="form" action="../controller/register.php" method="post">
-            <input type="email" name="email" placeholder="Email" required/>
-            <p class="wrongInput" <?= (!isset($_GET['errorEmail'])) ?:"style='display: block;'"?>>
-                <span>Die email ist bereits registriert!</span>
-            </p>
-            <p class="wrongInput" <?= (!isset($_GET['errorNotRegistered'])) ?:"style='display: block;'"?>>
-                <span>Die email ist nicht registriert!</span>
-            </p>
-            <p class="wrongInput" <?= (!isset($_GET['errorSendEmail'])) ?:"style='display: block;'"?>>
-                <span>Die email konnte nicht gesendet werden!</span>
-            </p>
-            <input id="register" type="submit" value="ANMELDEN">
-            <input id="unsubscribe" type="submit" value="ABBESTELLEN">            
+            <div class="row">
+                <div class="col">
+                    <input type="email" name="email" placeholder="Email" required/>
+                    <p class="wrongInput" <?= (!isset($_GET['errorEmail'])) ?:"style='display: block;'"?>>
+                        <span>Die email ist bereits registriert!</span>
+                    </p>
+                    <p class="wrongInput" <?= (!isset($_GET['errorNotRegistered'])) ?:"style='display: block;'"?>>
+                        <span>Die email ist nicht registriert!</span>
+                    </p>
+                    <p class="wrongInput" <?= (!isset($_GET['errorSendEmail'])) ?:"style='display: block;'"?>>
+                        <span>Die email konnte nicht gesendet werden!</span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input id="register" type="submit" value="ANMELDEN">
+                    <input id="unsubscribe" type="submit" value="ABMELDEN">            
+                </div>
+            </div>
         </form>
     </div>
 

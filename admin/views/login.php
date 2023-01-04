@@ -25,11 +25,23 @@ require_once "../controller/session.php";
             <h1>Login</h1>
     </div>
     <form class="form" action="../controller/login.php" method="post">
-        <input class="bottommargin2" type="text" name="username" placeholder="Name" required/>
-        <input type="password" name="password" placeholder="Passwort"
-               pattern=".{4,20}" required title="Passwort 4 - 20 Zeichen"/>
-        <input id="login" type="submit" value="LOGIN">
-            <?php if(isset($_GET['error'])){ echo "<p id=\"wrongLogin\">Falsche Eingabe!</p>"; };?>
+         <div class="row">
+            <div class="col">
+                <input type="text" name="username" placeholder="Name" required/>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col">
+                <input type="password" name="password" placeholder="Passwort"
+                       pattern=".{4,20}" required title="Passwort 4 - 20 Zeichen"/>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col">
+                <input id="login" type="submit" value="LOGIN">
+                <?php if(isset($_GET['error'])){ echo "<p id=\"wrongLogin\">Falsche Eingabe!</p>"; };?>
+            </div>
+        </div>
     </form>
 </div>
 
