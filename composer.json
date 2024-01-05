@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.7.1"
+    },
+    "autoload": {
+        "classmap": [
+            "model/Connect/",
+            "model/"
+        ]
+    }
+}

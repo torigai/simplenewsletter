@@ -1,0 +1,140 @@
+.login-page {
+    max-width: 100%;
+    width: 350px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 100%;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#title h1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+.logo {
+    margin-left: 5%;
+    margin-top: 5%;
+    max-width: 150px;
+}
+
+#login {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #EF7D25;
+    border: 0;
+    padding: 15px;
+    margin-top: 1em;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#register {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #EF7D25;
+    border: 0;
+    padding: 10px;
+    margin-top: 1em;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#unsubscribe {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #6D7A4C;
+    border: 0;
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.wrongInput {
+    font-size: 0.82em;
+    font-weight: bold;
+    color: red;
+    margin: 3px 0 0 10px;
+    padding: 0;
+    text-align: left;
+    display: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus {
+  color: #333;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn-success {
+  color: #fff;
+  background-color: #EF7D25;
+  border-color: #4cae4c;
+}
+.btn-cancel {
+  color: #fff;
+  background-color: #8F3A84;
+  border-color: #4cae4c;
+}
+
+.bottommargin {
+    margin-bottom: 3em;
+}
+
+.bottommargin2 {
+    margin-bottom: 1em;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.col {
+  width: 100%;
+}
